@@ -26,58 +26,58 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
+<div class="root">
     <?php
          echo $this->render('_header');
-    // NavBar::begin([
-    //     'brandLabel' => Yii::$app->name,
-    //     'brandUrl' => Yii::$app->homeUrl,
-    //     'options' => [
-    //         //'class' => 'navbar-inverse navbar-fixed-top',
-    //     ],
-    // ]);
-    // $menuItems = [
-    //     ['label' => 'Home', 'url' => ['/site/index']],
-    //     ['label' => 'About', 'url' => ['/site/about']],
-    //     ['label' => 'Contact', 'url' => ['/site/contact']],
-    // ];
-    // if (Yii::$app->user->isGuest) {
-    //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    // } else {
-    //     $menuItems[] = '<li>'
-    //         . Html::beginForm(['/site/logout'], 'post')
-    //         . Html::submitButton(
-    //             'Logout (' . Yii::$app->user->identity->username . ')',
-    //             ['class' => 'btn btn-link logout']
-    //         )
-    //         . Html::endForm()
-    //         . '</li>';
-    // }
-    // echo Nav::widget([
-    //     'options' => ['class' => 'navbar-nav ml-auto'],
-    //     'items' => $menuItems,
-    // ]);
-    // NavBar::end();
+   
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <div class="main">
+    <div class="Modal_Modal__2-MHQ" style="transform: translateY(-100vh); opacity: 0;"></div>
+<div class="Modal_Modal__2-MHQ" style="transform: translateY(-100vh); opacity: 0;">
+   <h3>Your Order</h3>
+   <p>A delicious burger with following ingredients :</p>
+   <ul>
+      <li><span style="text-transform: capitalize;">salad</span> : 0 </li>
+      <li><span style="text-transform: capitalize;">bacon</span> : 0 </li>
+      <li><span style="text-transform: capitalize;">cheese</span> : 0 </li>
+      <li><span style="text-transform: capitalize;">meat</span> : 0 </li>
+   </ul>
+   <p><strong>Total Price : 4.00</strong></p>
+   <p>Continue to Checkout?</p>
+   <button class="Button_Button__2_yUN Button_Danger__22cxd">CANCEL</button><button class="Button_Button__2_yUN Button_Success__1YUK9">CONTINUE</button>
+</div>
+<div class="Burger_Burger__1bt4S">
+   <div class="BurgerIngredients_BreadTop__1Tgt_">
+      <div class="BurgerIngredients_Seeds1__3gHSL"></div>
+      <div class="BurgerIngredients_Seeds2__1QdVy"></div>
+   </div>
+   <p>Please start adding ingredients !!!.</p>
+   <div class="BurgerIngredients_BreadBottom__3qx0s"></div>
+</div>
+<div class="BuildControls_BuildControls__h_mQt">
+   <p>Current Price : <strong>4.00</strong></p>
+   <div class="BuildControl_BuildControl__1PzSL">
+      <div class="BuildControl_Label__2ea1p">Salad</div>
+      <button class="BuildControl_Less__3KFta" disabled="">Less</button><button class="BuildControl_More__3u6ga">More</button>
+   </div>
+   <div class="BuildControl_BuildControl__1PzSL">
+      <div class="BuildControl_Label__2ea1p">Cheese</div>
+      <button class="BuildControl_Less__3KFta" disabled="">Less</button><button class="BuildControl_More__3u6ga">More</button>
+   </div>
+   <div class="BuildControl_BuildControl__1PzSL">
+      <div class="BuildControl_Label__2ea1p">Bacon</div>
+      <button class="BuildControl_Less__3KFta" disabled="">Less</button><button class="BuildControl_More__3u6ga">More</button>
+   </div>
+   <div class="BuildControl_BuildControl__1PzSL">
+      <div class="BuildControl_Label__2ea1p">Meat</div>
+      <button class="BuildControl_Less__3KFta" disabled="">Less</button><button class="BuildControl_More__3u6ga">More</button>
+   </div>
+   <button class="BuildControls_OrderButton__1eKNn" disabled=""> SIGN UP FOR ORDER</button>
+</div>
+        <!-- <?= $content ?> -->
     </div>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>
