@@ -3,7 +3,7 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=freecodetube',
+            'dsn' => 'mysql:host=localhost;dbname=burger_app',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
