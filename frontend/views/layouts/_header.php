@@ -20,7 +20,7 @@ use yii\helpers\Html;
             'options'=>['class'=>'navbar navbar-expand-lg navbar-light bg-light shadow-sm']
         ]);
         $menuItems = [
-            ['label' => 'Burger Builder', 'url' => ['/site/index']],
+            ['label' => 'Burger Builder', 'url' => ['/burger/index']],
         ];
         if (Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
