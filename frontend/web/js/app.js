@@ -68,6 +68,42 @@ $(function () {
             $(".remove-meat").attr('disabled', true);
         }
     });
+    $(document).on('click', '.showModalButton', function () {
+        var saladCount =  $('.BurgerIngredients_Salad__3uNBq').length;
+        $(".saladCount").html(saladCount);
+        var baconCount =  $('.BurgerIngredients_Bacon__1Nvb9').length;
+        $(".baconCount").html(baconCount);
+        var cheeseCount =  $('.BurgerIngredients_Cheese__1RsP3').length;
+        $(".cheeseCount").html(cheeseCount);
+        var meatCount =  $('.BurgerIngredients_Meat__3rI9h').length;
+        $(".meatCount").html(meatCount);
+        var total = $('.totalPrice').html();
+        $(".total").html(total);
+        $('#modal').modal('show');
+    });
+    $(document).on('click', '.checkout', function(){
+        var saladCount = $(".saladCount").text();
+        var baconCount = $(".baconCount").text();
+        var cheeseCount = $(".cheeseCount").text();
+        var meatCount = $(".meatCount").text();
+        var total = $(".total").text();
+        $.ajax({
+            url: '/burger/checkout',
+            type: 'POST',
+            data: {
+                saladCount: saladCount,
+                baconCount: baconCount,
+                cheeseCount: cheeseCount,
+                meatCount: meatCount,
+                total: total
+             },
+             success: function(data) {
+                $('#modal').modal('hide');
+                window.location.href = data;
+
+             }
+        });
+    });
 });
   
   

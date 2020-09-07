@@ -2,7 +2,8 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\bootstrap4\ActiveForm;
-use yii\bootstrap\Button;
+use yii\bootstrap4\Button;
+use yii\helpers\Url;
 ?>
 
    <div class="Modal_Modal__2-MHQ" style="transform: translateY(-100vh); opacity: 0;"></div>
@@ -28,7 +29,7 @@ use yii\bootstrap\Button;
       <div class="BurgerIngredients_BreadBottom__3qx0s"></div>
    </div>
    <div class="BuildControls_BuildControls__h_mQt">
-      <p>Current Price : <strong>4.00</strong></p>
+      <p>Current Price : <strong><span class="totalPrice">4.00</span></strong></p>
       <div class="BuildControl_BuildControl__1PzSL">
          <div class="BuildControl_Label__2ea1p">Salad</div>
          <button class="BuildControl_Less__3KFta remove-salad" disabled>Less</button><button class="BuildControl_More__3u6ga add-salad">More</button>
@@ -47,11 +48,10 @@ use yii\bootstrap\Button;
       </div>
       <?php 
          if (Yii::$app->user->isGuest) {
-            $link = "/site/login";
+            echo Html::a('SIGN UP FOR ORDER', ['/site/login'], ['class'=>'BuildControls_OrderButton__1eKNn', 'disabled'=>'disabled']); 
          } else {
-            $link = "/site/checkout";
+            echo Html::button('SIGN UP FOR ORDER', [ 'title' => 'Creating New Company', 'class' => 'BuildControls_OrderButton__1eKNn showModalButton ', 'disabled'=>true]); 
          }
-         echo Html::a('SIGN UP FOR ORDER', [$link], ['class'=>'BuildControls_OrderButton__1eKNn']) 
       ?>
       <!-- <button class="BuildControls_OrderButton__1eKNn" disabled> SIGN UP FOR ORDER</button> -->
    </div>
