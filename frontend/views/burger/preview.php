@@ -36,8 +36,9 @@ use yii\helpers\Html;
          <!-- <button class="Button_Button__2_yUN Button_Danger__22cxd">CANCEL</button> -->
          <?php 
             echo Html::a('CANCEL', ['/burger/cancel'], ['class'=>'Button_Button__2_yUN Button_Danger__22cxd']); 
+            echo Html::a('CONTINUE', ['/order/create'], ['class'=>'Button_Button__2_yUN Button_Success__1YUK9']); 
          ?>
-         <button class="Button_Button__2_yUN Button_Success__1YUK9">CONTINUE</button>
+         <!-- <button class="Button_Button__2_yUN Button_Success__1YUK9">CONTINUE</button> -->
       </div>
    </div>
 </div>

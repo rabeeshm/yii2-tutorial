@@ -562,3 +562,36 @@ body {
 .bg-light {
      background-color: none !important;
 }
+.Order{
+  width:100%;
+  border:1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 10px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.Ingredients
+{
+  text-transform: capitalize;
+  display: inline-block;  
+  margin: 0 8px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.Order_Order__1uwdZ {
+	width: 100%;
+	border: 1px solid #eee;
+	box-shadow: 0 2px 3px #ccc;
+	padding: 10px;
+	margin: 10px auto;
+	box-sizing: border-box
+}
+
+.Order_Ingredients__sQ-7W {
+	text-transform: capitalize;
+	display: inline-block;
+	margin: 0 8px;
+	padding: 5px;
+	border: 1px solid #ccc
+}
