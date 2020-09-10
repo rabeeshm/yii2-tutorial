@@ -13,7 +13,8 @@ class OrderController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $orders = Orders::findAll(['user_id'=>Yii::$app->user->id]);
+        return $this->render('index', ['orders' =>  $orders]);
     }
     public function actionCreate()
     {
