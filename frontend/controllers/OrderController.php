@@ -8,6 +8,7 @@ use yii\web\Controller;
 use Yii;
 use common\models\Orders;
 use yii\data\ActiveDataProvider;
+use common\models\UserDetails;
 
 class OrderController extends \yii\web\Controller
 {
@@ -18,6 +19,26 @@ class OrderController extends \yii\web\Controller
     }
     public function actionCreate()
     {
+        $userDetailsModel = new UserDetails();
+        if(isset($_POST['UserDetails']))
+        {
+            $userDetails = $_POST['UserDetails'];
+            $userDetailsModel->name=$userDetails['name'];
+            $userDetailsModel->user_id=Yii::$app->user->id;
+            $userDetailsModel->street=$userDetails['street'];
+            $userDetailsModel->city=$userDetails['city'];
+            $userDetailsModel->zip=$userDetails['zip'];
+            $userDetailsModel->state=$userDetails['state'];
+            $userDetailsModel->country=$userDetails['country'];
+            $userDetailsModel->delivery_type=$userDetails['delivery_type'];
+            $userDetailsModel->created_by=Yii::$app->user->id;
+            $userDetailsModel->created_at = time();
+            if($userDetailsModel->save()) {
+                $this->saveOrderDetails();
+            } 
+        }
+    }
+    public function saveOrderDetails() {
         $session = Yii::$app->session->get('saladCount');
         $saladCount = Yii::$app->session->get('saladCount');
         $cheeseCount = Yii::$app->session->get('cheeseCount');
@@ -45,5 +66,4 @@ class OrderController extends \yii\web\Controller
             $this->redirect('index');
         }
     }
-
 }

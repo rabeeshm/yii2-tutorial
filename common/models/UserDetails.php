@@ -17,7 +17,7 @@ use Yii;
  * @property string|null $country
  * @property int|null $delivery_type
  * @property int|null $created_by
- * @property string|null $created_at
+ * @property int|null $created_ats
  *
  * @property User $createdBy
  * @property User $user
@@ -39,8 +39,8 @@ class UserDetails extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'zip'], 'required'],
-            [['user_id', 'zip', 'delivery_type', 'created_by'], 'integer'],
-            [['name', 'street', 'city', 'state', 'country', 'created_at'], 'string', 'max' => 16],
+            [['user_id', 'zip', 'delivery_type', 'created_by', 'created_at'], 'integer'],
+            [['name', 'street', 'city', 'state', 'country'], 'string', 'max' => 16],
             [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

@@ -6,6 +6,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use Yii;
+use common\models\UserDetails;
 
 class BurgerController extends \yii\web\Controller
 {
@@ -46,7 +47,8 @@ class BurgerController extends \yii\web\Controller
     }
     public function actionPreview()
     {
-        return $this->render('preview');
+        $model = new UserDetails();
+        return $this->render('preview', ['model' =>  $model]);
     }
     public function actionCancel()
     {

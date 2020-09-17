@@ -104,6 +104,9 @@ $(function () {
              }
         });
     });
+    $( ".continue" ).click(function() {
+        $(".ContactData").removeClass( "hideform" )
+    });
 });
   
   

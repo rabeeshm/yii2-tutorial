@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 ?>
 <div>
@@ -36,9 +37,45 @@ use yii\helpers\Html;
          <!-- <button class="Button_Button__2_yUN Button_Danger__22cxd">CANCEL</button> -->
          <?php 
             echo Html::a('CANCEL', ['/burger/cancel'], ['class'=>'Button_Button__2_yUN Button_Danger__22cxd']); 
-            echo Html::a('CONTINUE', ['/order/create'], ['class'=>'Button_Button__2_yUN Button_Success__1YUK9']); 
+            //echo Html::a('CONTINUE', ['/order/create'], ['class'=>'Button_Button__2_yUN Button_Success__1YUK9 continue']); 
          ?>
-         <!-- <button class="Button_Button__2_yUN Button_Success__1YUK9">CONTINUE</button> -->
+         <button class="Button_Button__2_yUN Button_Success__1YUK9 continue">CONTINUE</button>
       </div>
    </div>
 </div>
+<div class="ContactData hideform">
+      <h4>Enter your Contact Details</h4>
+
+      <?php
+      $form = ActiveForm::begin([
+         'action' => ['/order/create'],
+         'method' => 'post'
+      ]) 
+     // $form = ActiveForm::begin(['action' =>['forum-post/create'], 'id' => 'forum_post', 'method' => 'post',]);
+      ?>
+      <div class="Input_Input">
+         <?= $form->field($model, 'name')->textInput(['maxlength' => true])->input('', ['placeholder' => "Your Name"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?= $form->field($model, 'street')->textInput(['maxlength' => true])->input('', ['placeholder' => "Street"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?= $form->field($model, 'city')->textInput(['maxlength' => true])->input('', ['placeholder' => "City"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?= $form->field($model, 'zip')->textInput(['type' => 'number','maxlength' => true])->input('', ['placeholder' => "ZIP Code"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?= $form->field($model, 'country')->textInput(['maxlength' => true])->input('', ['placeholder' => "Country"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?= $form->field($model, 'state')->textInput(['maxlength' => true])->input('', ['placeholder' => "State"])->label(false); ?>
+      </div>
+      <div class="Input_Input">
+         <?php $options= ['0' => 'Fastest', '1' => 'Cheapest'];?>
+         <?= $form->field($model, 'delivery_type')->dropDownList($options,['prompt'=>'Select Delivery Mode'])->label(false); ?>
+      </div>
+
+      <?= Html::submitButton('Order', ['class' => '']) ?>
+      <?php ActiveForm::end() ?>
+   </div>
